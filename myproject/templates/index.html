@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block slider %}	
+<div id="slider-wrapper">
+		<div id="slides">
+							<div id="slider-big">
+								<div class="slides_container big-slider">
+									<!-- SLIDER STARTS-->
+									<!-- SLIDER CONTENT STARTS-->
+									 {% for post in posts.object_list %}
+									<div class="slide">
+										<img src="http://web-vogue.com/themes/Titanium/blue/images/slideshow/slide-001.jpg" alt=" " width="1000" height="350"/>
+										<div class="caption">
+											<h3>{{ post.title }}</h3>
+											<p></p>
+										</div>
+									</div>
+									 {% endfor %}
+									
+								</div>
+								<!-- SLIDESHOW CONTAINER ENDS-->
+							</div>
+							<div class="slides-nav"> 
+								<a href="#" class="prev">Previous Slide</a> 
+								<a href="#" class="next">Next Slide</a> 
+							</div> 
+						</div>
+</div>
+
+
+<div class="post-slider-widget">
+<div class="inner-content">
+<h2>Unique and Simple <span class="colored">HTML 5</span> Business Template Perfect for Your Business!</h2>
+</div>
+<div class="one-fourth last">
+<div class="post-slider-widget-button-holder">	<a href="#" class="button huge round blue">See Features</a></div>
+</div>
+</div>
+<div class="big-divider"></div>
+
+
+{% endblock %}	
+{% block content %}	
+﻿<div class="one">
+					<div class="one-fourth">
+				
+							<h4>What can we do for You</h4>
+							<p>
+								Iuraveras magnifice ex auxilium super color est cum. Ripae simul navigat est amet constanter approximavit te.Iuraveras magnifice ex auxilium super color est cum.
+								
+							</p>
+							<p>
+								Iuraveras magnifice Ripae simul navigat ex auxilium super color est cum.
+								
+							</p>
+							<strong><a href="#" class="colored">Read more about us</a></strong>
+						
+					</div>
+					<div class="one-fourth">
+						<p><img src="http://www.fps.com.vn/static/images/portfolio-img-10.jpg" alt=" "  width="220" height="110"/></p>
+						<div class="text-align-left">
+							<h4>Browsers Compatible</h4>
+							<p>
+								Iuraveras magnifice ex auxilium super color est cum. Ripae simul navigat est amet constanter approximavit te.
+							</p>
+						<p>	<a href="#" class="button small round blue">Read More</a></p>
+							</div>
+					</div>
+					<div class="one-fourth">
+						<p><img src="http://www.fps.com.vn/static/images/portfolio-img-11.jpg" alt=" "  width="220" height="110"/></p>
+						<div class="text-align-left">
+							<h4>Full Documentation</h4>
+							<p>
+								Iuraveras magnifice ex auxilium super color est cum. Ripae simul navigat est amet constanter approximavit te.
+							</p>
+							<p>	<a href="#" class="button small round blue">Read More</a></p>
+						</div>
+					</div>
+					<div class="one-fourth last">
+							<p><img src="http://www.fps.com.vn/static/images/portfolio-img-14.jpg" alt=" "  width="220" height="110"/></p>
+						<div class="text-align-left">
+							<h4>Full Documentation</h4>
+							<p>
+								Iuraveras magnifice ex auxilium super color est cum. Ripae simul navigat est amet constanter approximavit te.
+							</p>
+							<p>	<a href="#" class="button small round blue">Read More</a></p>
+						</div>
+					</div>
+					<div class="horizontal-line">
+					</div>
+				</div>
+			
+		
+{% endblock %}
+

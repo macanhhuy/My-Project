@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>demo</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Mac Anh Huy" />
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<script type="text/javascript" src="http://www.fps.com.vn/static/js/jquery-1.7.1.js"></script>
+		<script type="text/javascript" src="http://www.fps.com.vn/static/js/underscore.js"></script>
+		<script type="text/javascript" src="http://www.fps.com.vn/static/js/backbone.js"></script>
+		<script type="text/javascript" src="http://www.fps.com.vn/static/js/backbone-relational.js"></script>
+
+		<script type="text/javascript" src="http://www.fps.com.vn/static/js/ICanHaz.js"></script>
+		
+		<script type="text/javascript" src="http://www.fps.com.vn/static/js/json2.js"></script>
+		<script type="text/javascript" src="http://www.fps.com.vn/static/js/function.js"></script>
+
+	</head>
+
+	<body>
+		<table class="table table-striped" id="app">
+        <thead>
+          <tr>
+           
+        
+          </tr>
+        </thead>
+    </table>
+
+    {% load verbatim %}
+    {% verbatim %}
+    <script id="postRowTpl" type="text/html">
+        <tr>
+         <td>{{ title }}</td>
+            <td>{{& content }}</td>
+      
+        </tr>
+    </script>
+    {% endverbatim %}
+	</body>
+</html>

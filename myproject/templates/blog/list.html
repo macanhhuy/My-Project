@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+{% load fb_versions %}
+<div class="one">
+		<div class="inner-content">
+			{% for post in posts.object_list %}
+		<div class="post-entry">
+			 <div class="post-date">
+				<span class="post-month">{{ post.created.month }}</span>
+				 <strong class="post-day">{{ post.created.day }}</strong>
+				 <span class="post-year ">{{ post.created.year }}</span>
+			 </div>
+			<div class="post-intro">
+			<a href="{% url blog.views.post post.slug %}"><h3> {{ post.title }}</h3></a>
+			
+			<p><img src="http://www.fps.com.vn/timthumb.php?src={% version post.thumbnail 'medium' %}{{ post.thumbnail }}&amp;h=175&amp;w=615&amp;zc=1" alt=" " width="615" height="175" class="img-align-left"></p> 
+			
+				<p></p>	
+					
+				<p><a href="{% url blog.views.post post.slug %}" class="button small round grey">Read More</a></p>	
+				
+		</div>
+		<div class="horizontal-line"></div>
+		</div>
+		
+		{% endfor %}
+		
+		<!-- Next/Prev page links  -->
+    {% if posts.object_list and posts.paginator.num_pages > 1 %}
+    <ul class="blog-pagination">
+        <li> {% if posts.has_previous %} <a href= "?page={{ posts.previous_page_number }}">newer entries &lt;&lt; </a> {% endif %} 
+        	
+        	<li class="active"> &nbsp;Page {{ posts.number }} of {{ posts.paginator.num_pages }} </li> 
+        	{% if posts.has_next %}<li><a href="?page={{ posts.next_page_number }}"> &gt;&gt; older entries</a> {% endif %} </li>
+    </ul>
+    {% endif %}
+	
+		</div>
+		
+		<div class="one-fourth last">
+		
+				
+						<h4>Category</h4>
+						<ul class="simple-nav">
+							<!--SIMPLE UL -->
+							<li><a href="#">News</a></li>
+						
+						</ul>
+						<div class="horizontal-line">
+						</div>
+					
+					
+		</div>
+		</div>
+    
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+{% for comment in post.comment_set.all %}
+            <div class="comment">
+        <div class="time">{{ comment.created }} | {{ comment.author }}</div>
+        <div class="body">{{ comment.body|linebreaks }}</div>
+        {% if user.is_staff %}
+            <input type="checkbox" name="delete" value="{{ comment.pk }}">
+            <a href="{% url 'blog.views.delete_comment' post.pk comment.id %}">delete</a>
+        {% endif %}
+    </div>
+            {% endfor %}
